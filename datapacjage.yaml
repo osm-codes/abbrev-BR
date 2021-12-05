@@ -1,0 +1,36 @@
+name: judisdiction_abbrev
+encoding: utf-8
+format: csv
+hashing: md5
+hash: 18e3980e323c0cd3cba1649235d618df
+path: judisdiction_abbrev.csv
+profile: tabular-data-resource
+schema:
+  fields:
+    - name: subdivision_code
+      type: string
+      description: (NN PK1) [ISO&#160;3166-2:BR](https://en.wikipedia.org/wiki/ISO_3166-2:BR),  the entry for Brazil in ISO 3166-2, part of the ISO 3166 standard, which defines codes for the names of the principal subdivisions of a country.
+    - name: local_num
+      type: integer
+      description: (NN PK2) Local (sovereign) city (or second level subdivisions) identifier, in this case the [standard IBGE numeric code](https://www.ibge.gov.br/explica/codigos-dos-municipios.php).
+    - name: name
+      type: string
+      description: (NN)  Name in the country's official language, name associated to local_num.
+    - name: abbrev
+      type: string
+      description: Abbreviation of the name associated to local_num.
+    - name: abbrev_source
+      type: integer
+      description: ID of the "Abbreviation sources" section below.
+    - name: kx_lexlabel
+      type: string
+      description: name with reduced syntax, using local rules of the [Lex URN](https://en.wikipedia.org/wiki/Lex_(URN)).
+    - name: kx_abbrev_score
+      type: string
+      description: Cache for 0-9 elected score, filtered by str_abbrev_minscore() function. Good= 7 to 9; Regular= 4 to 6, Weak= 0 to 3.
+    - name: kx_abbrev_rule
+      type: string
+      description: Cache for detected "abbreviation process rule".
+scheme: file
+source: many, see column abbrev_source.
+license: CC0
